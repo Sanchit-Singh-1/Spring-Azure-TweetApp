@@ -38,6 +38,10 @@ public class AuthenticationController {
 		map.put("token", token);
 		return map;
 	}
+	@GetMapping("/message")
+	public String message(){
+		return " Hi there";
+	}
 
 	private String getUser(String authHeader) {
 		String encoded = authHeader.substring(6).toString();

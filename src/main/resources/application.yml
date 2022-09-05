@@ -25,7 +25,7 @@ spring:
 #    database: tweetappdb
 #    spring.data.mongodb.database=tweetapp-mongo
 #    spring.data.mongodb.uri=mongodb://tweetapp-mongo:ueOxiMBzVuAsmJ9RpFOuWJCSWoKPvji4yNgUcl3XOQOX5IvIXrWQDdXMu729JErCQcJ4oYVRynwt9g9Z6SmmfA==@tweetapp-mongo.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@tweetapp-mongo@
-#---
+---
 server:
   port : 8090
 ---

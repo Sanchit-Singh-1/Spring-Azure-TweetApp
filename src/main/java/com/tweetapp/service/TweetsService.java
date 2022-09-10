@@ -2,7 +2,9 @@ package com.tweetapp.service;
 
 import com.tweetapp.request.TweetRequest;
 import com.tweetapp.response.TweetResponse;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface TweetsService {
 
 	TweetResponse getAllTweets();

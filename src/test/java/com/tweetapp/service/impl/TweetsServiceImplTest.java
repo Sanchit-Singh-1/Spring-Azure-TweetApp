@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.tweetapp.kafka.Producer;
+
 import org.bson.types.ObjectId;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -49,8 +49,8 @@ public class TweetsServiceImplTest {
 	@MockBean
 	TweetsRepo tweetsRepo;
 
-	@MockBean
-	private Producer producer;
+//	@MockBean
+//	private Producer producer;
 
 
 	@Test

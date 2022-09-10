@@ -1,54 +1,23 @@
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      group:
+        custom:
+          include: '*'
+      probes:
+        enabled: 'true'
+      show-details: ALWAYS
+      show-components: ALWAYS
+server:
+  port: '8090'
 spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://root:root12sanc@tweetappdb.botptal.mongodb.net/?retryWrites=true&w=majority
+      database: tweetappdb
   profiles:
     active: nonprod
----
-#spring:
-#  profiles: dev
-#  data.mongodb:
-#    host: localhost
-#    port: 27017
-#    database: tweetappdb
-#---
-#spring:
-#  profiles: nonprod
-#  data.mongodb:
-#    host: localhost
-#    port: 27017
-#    database: tweetappdb
-#---
-#spring:
-#  profiles: prod
-#  data.mongodb:
-#    host: localhost
-#    port: 27017
-#    database: tweetappdb
-#    spring.data.mongodb.database=tweetapp-mongo
-#    spring.data.mongodb.uri=mongodb://tweetapp-mongo:ueOxiMBzVuAsmJ9RpFOuWJCSWoKPvji4yNgUcl3XOQOX5IvIXrWQDdXMu729JErCQcJ4oYVRynwt9g9Z6SmmfA==@tweetapp-mongo.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@tweetapp-mongo@
----
-server:
-  port : 8090
----
-spring:
-   kafka:
-     consumer:
-        bootstrap-servers: localhost:9092
-        group-id: group_id
-        auto-offset-reset: earliest
-        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-     producer:
-        bootstrap-servers: localhost:9092
-        key-serializer: org.apache.kafka.common.serialization.StringSerializer
-        value-serializer: org.apache.kafka.common.serialization.StringSerializer
----
-logging:
-  level:
-    org.springframework: ERROR
-    com.tweetapp: INFO
-  pattern:
-    console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
-    file: "%d %p %c{1.} [%t] %m%n"
-  file: app.log
-
-
